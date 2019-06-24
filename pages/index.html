@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewpost" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>图片库</title>
+	</head>
+
+	<body>
+		<div>
+			<ul id="gallery">
+				<li>
+					<a id="a1" href="../images/ma.png" title="飞马">飞马</a>
+				</li>
+				<li>
+					<a id="a2" href="../images/woman.jpg" title="花中少女">花中少女</a>
+				</li>
+				<li>
+					<a id="a3" href="../images/drogen.jpg" title="中国龙">中国龙</a>
+				</li>
+			</ul>
+			<img id="img" title="图片描述" src="../images/drogen.jpg" />
+			<p id="descrition">图片描述</p>
+		</div>
+		<script>
+			var oimg = document.getElementById('img');
+			var op = document.getElementById('descrition');
+			var oa = document.getElementsByTagName('a');
+			for(var i = 0; i < oa.length; i++) {
+				oa[i].onclick = function() {
+					var sdsds = oimg.getAttribute('src');
+					var txt=op.firstChild.nodeValue;
+					var value = this.href;
+					var title= this.title;
+					console.log(title,txt);
+					sdsds = oimg.setAttribute('src', value);
+					op.firstChild.nodeValue=title;
+					return false;
+				}
+			}
+		</script>
+	</body>
+
+</html>
